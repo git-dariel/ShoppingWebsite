@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { Search, ShoppingCartOutlined } from "@material-ui/icons";
-import Badge from "@material-ui/core/Badge";
+// import { ShoppingCartOutlined } from "@material-ui/icons";
+// import Badge from "@material-ui/core/Badge";
 
 const Container = styled.div`
-  height: 60px;
+  border-bottom: 1px solid gray;
 `;
 
 const Wrapper = styled.div`
-  padding: 10px 20px;
+  padding: 20px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,23 +20,6 @@ const Left = styled.div`
   align-items: center;
 `;
 
-const Language = styled.span`
-  font-size: 14px;
-  cursor: pointer;
-`;
-
-const SearchContainer = styled.div`
-  border: 0.5px solid lightgray;
-  display: flex;
-  align-items: center;
-  margin-left: 25px;
-  padding: 5px;
-`;
-
-const Input = styled.input`
-  border: none;
-`;
-
 const Center = styled.div`
   flex: 1;
 `;
@@ -44,6 +27,7 @@ const Center = styled.div`
 const Logo = styled.h1`
   font-weight: bold;
   text-align: center;
+  font-size: 16px;
 `;
 
 const Right = styled.div`
@@ -56,7 +40,19 @@ const Right = styled.div`
 const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
-  margin-left: 25px;
+  margin-left: 20px;
+`;
+
+const MenuWrapper = styled.div`
+  width: 80px;
+  height: 25px;
+  border: 2px solid #040D12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding-right: 20px;
+  margin-right: 20px;
 `;
 
 const NavBar = () => {
@@ -64,23 +60,17 @@ const NavBar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Language>EN</Language>
-          <SearchContainer>
-            <Input />
-            <Search style={{ color: "gray", fontSize: 16 }} />
-          </SearchContainer>
+          <Logo>STORE by persyphone</Logo>
         </Left>
-        <Center>
-          <Logo>GURU.</Logo>
-        </Center>
+        <Center></Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
-          <MenuItem>
-            <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlined />
-            </Badge>
-          </MenuItem>
+          <MenuWrapper>
+            <MenuItem>REGISTER</MenuItem>
+          </MenuWrapper>
+
+          <MenuWrapper>
+            <MenuItem>SIGN IN</MenuItem>
+          </MenuWrapper>
         </Right>
       </Wrapper>
     </Container>
