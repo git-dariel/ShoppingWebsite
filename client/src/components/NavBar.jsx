@@ -8,7 +8,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  padding: 20px 50px;
+  padding: 20px 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,9 +25,9 @@ const Center = styled.div`
 `;
 
 const Logo = styled.h1`
-  font-weight: bold;
+  font-weight: 900;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
 `;
 
 const Right = styled.div`
@@ -40,19 +40,13 @@ const Right = styled.div`
 const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
-  margin-left: 20px;
-`;
+  font-weight: 900;
+  padding: 0px 20px;
 
-const MenuWrapper = styled.div`
-  width: 80px;
-  height: 25px;
-  border: 2px solid #040D12;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 20px;
-  padding-right: 20px;
-  margin-right: 20px;
+  &:hover {
+    color: violet;
+    transition:  0.3s ease-in;
+  }
 `;
 
 const NavBar = () => {
@@ -64,13 +58,9 @@ const NavBar = () => {
         </Left>
         <Center></Center>
         <Right>
-          <MenuWrapper>
-            <MenuItem>REGISTER</MenuItem>
-          </MenuWrapper>
+          <MenuItem>REGISTER</MenuItem>
 
-          <MenuWrapper>
-            <MenuItem>SIGN IN</MenuItem>
-          </MenuWrapper>
+          <MenuItem>SIGN IN</MenuItem>
         </Right>
       </Wrapper>
     </Container>
