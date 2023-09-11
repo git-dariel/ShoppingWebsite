@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 // import { ShoppingCartOutlined } from "@material-ui/icons";
 // import Badge from "@material-ui/core/Badge";
 
@@ -43,9 +44,22 @@ const MenuItem = styled.div`
   font-weight: 900;
   padding: 0px 20px;
 
+  .link {
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 900;
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      color: violet;
+      transition: 0.3s ease-in;
+    }
+  }
+
   &:hover {
     color: violet;
-    transition:  0.3s ease-in;
+    transition: 0.3s ease-in;
   }
 `;
 
@@ -58,7 +72,11 @@ const NavBar = () => {
         </Left>
         <Center></Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
+          <MenuItem>
+            <Link className="link" to="/signup">
+              REGISTRATION
+            </Link>
+          </MenuItem>
 
           <MenuItem>SIGN IN</MenuItem>
         </Right>
