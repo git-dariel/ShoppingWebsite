@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import img from "../assets/img/img-cropted.jpg";
 import style from "../styles/Home/LandingPage";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
   const [animateButton, setAnimateButton] = useState(false);
+  const navigate = useNavigate();
 
   const handleButtonClick = () => {
     setAnimateButton(true);
+    navigate("./signin");
   };
 
   return (

@@ -74,6 +74,15 @@ const Home = styled.p`
   font-weight: 500;
 `;
 
+const Descipt = styled.p`
+  font-size: 14px;
+  font-weight: 500;
+`;
+
+const Result = styled.p`
+  font-size: 14px;
+`;
+
 const style = {
   WrapperBack,
   Background,
@@ -83,6 +92,8 @@ const style = {
   ButtonWrap,
   Button,
   Home,
+  Descipt,
+  Result,
 };
 
 export default style;

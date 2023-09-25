@@ -1,26 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "../styles/User Account/Registration";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("http://localhost:3001/register", {
+        username: username,
+        email: email,
+        password: password,
+      });
+
+      console.log(response);
+      alert("User registered successfully");
+      navigate("/signin");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <style.WrapperBack>
       <style.Background>
         <style.Title>Sign up</style.Title>
         <p>Lorem ipsum dolor sit amet.</p>
         <style.InputWrapper>
-          <style.Input type="text" placeholder="Username" />
-          <style.Input type="text" placeholder="Email" />
-          <style.Input type="password" placeholder="Password" />
+          <style.Input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <style.Input
+            type="text"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <style.Input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </style.InputWrapper>
         <style.ButtonWrap>
-          <style.Button>Sign up</style.Button>
+          <style.Button type="submit" onClick={handleSubmit}>
+            Sign up
+          </style.Button>
         </style.ButtonWrap>
 
         <style.DesWrapper>
           <style.Descript>Already have an account?</style.Descript>
           <style.Login>
-            <Link to="/signin">Login</Link>
+            <Link to="/signin">Signin</Link>
           </style.Login>
         </style.DesWrapper>
 
