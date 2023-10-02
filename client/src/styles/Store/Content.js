@@ -4,7 +4,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
-  height: 60vh;
+  height: 65vh;
   width: 100vw;
 `;
 
@@ -13,7 +13,7 @@ const Title = styled.h1`
   margin-top: 50px;
 `;
 
-const OneProduct = styled.div`
+const Product = styled.div`
   width: 250px;
   height: 390px;
   background-color: white;
@@ -37,8 +37,8 @@ const ProductName = styled.p`
 `;
 
 const Img = styled.img`
-  width: 250px;
-  height: 250px;
+  width: 210px;
+  height: 220px;
 `;
 
 const Price = styled.div`
@@ -76,7 +76,7 @@ const AddtoCart = styled.button`
 
 const style = {
   Wrapper,
-  OneProduct,
+  Product,
   Title,
   Img,
   ImgWrapper,
