@@ -1,11 +1,11 @@
 import React from "react";
 import NavBar from "../components/store-components/NavBar";
-import Content from "../components/store-components/Content";
+import Contents from "../components/store-components/Contents";
 const Store = () => {
   return (
     <div>
       <NavBar />
-      <Content />
+      <Contents />
     </div>
   );
 };
