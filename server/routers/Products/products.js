@@ -9,7 +9,7 @@ const products = [
   {
     id: "2",
     name: "MacBook Air",
-    price: "1232,59",
+    price: "1232.59",
     image:
       "https://res.cloudinary.com/dpud9tn8q/image/upload/v1696941022/Online-Shop/q8arbl8bvuirykab4xoz.png",
   },

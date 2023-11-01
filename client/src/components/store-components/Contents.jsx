@@ -1,9 +1,28 @@
 import React from "react";
 import style from "../../styles/Store/Content";
 import { useGetAllProductsQuery } from "../../features/productsApi";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../features/cartSlice";
+import axios from "axios";
 
 const Contents = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();
+  const dispatch = useDispatch();
+
+  const handleAddToCart = async (product) => {
+    try {
+      dispatch(addToCart(product));
+
+      const response = await axios.post(
+        "http://localhost:3001/cartProduct",
+        product
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <style.HomeContainer>
       {isLoading ? (
@@ -21,7 +40,9 @@ const Contents = () => {
 
                 <p className="price">${product.price}</p>
 
-                <button>Add to Cart</button>
+                <button onClick={() => handleAddToCart(product)}>
+                  Add to Cart
+                </button>
               </style.Product>
             ))}
           </style.Products>
