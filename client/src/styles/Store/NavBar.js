@@ -54,9 +54,6 @@ const MenuItem = styled.div`
   .logout-icon {
     height: 25px;
     width: 25px;
-  }
-
-  .logout-link {
     cursor: pointer;
     color: black;
 

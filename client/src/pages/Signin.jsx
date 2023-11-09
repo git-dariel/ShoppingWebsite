@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import style from "../styles/User Account/SignIn";
-import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import style from "../styles/User Account/SignIn";
 
 const Signin = () => {
   const [username, setUsername] = useState("");
@@ -20,7 +20,7 @@ const Signin = () => {
           setLoginStatus(response.data.message);
         } else {
           setLoginStatus(response.data[0].username);
-          navigate("/store");
+          navigate("/loading");
         }
       });
   };

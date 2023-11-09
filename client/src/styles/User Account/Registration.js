@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
-const WrapperBack = styled.div`
+const WrapperBack = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background: #ebe3d5;
 `;
 
 const Background = styled.div`
   width: 380px;
   height: 500px;
-  background-color: white;
+  background-color: #f3eeea;
   border-radius: 20px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 
@@ -21,7 +22,7 @@ const Background = styled.div`
 `;
 
 const Title = styled.h1`
-  margin-top: 30px;
+  margin-top: 70px;
   text-align: center;
 `;
 

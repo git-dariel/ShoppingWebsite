@@ -3,6 +3,7 @@ import style from "../styles/User Account/Registration";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Registration = () => {
   const [username, setUsername] = useState("");
@@ -12,19 +13,27 @@ const Registration = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    try {
-      const response = await axios.post("http://localhost:3001/register", {
-        username: username,
-        email: email,
-        password: password,
+  
+    if (!username || !email || !password) {
+      toast.error("Please fill all the fields", {
+        position: "top-center",
       });
-
-      console.log(response);
-      alert("User registered successfully");
-      navigate("/signin");
-    } catch (error) {
-      console.error(error);
+    } else {
+      try {
+        const response = await axios.post("http://localhost:3001/register", {
+          username: username,
+          email: email,
+          password: password,
+        });
+  
+        console.log(response);
+        toast.success("User registered successfully", {
+          position: "top-center",
+        });
+        navigate("/signin");
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 
