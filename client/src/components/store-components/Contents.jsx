@@ -1,9 +1,9 @@
+import axios from "axios";
 import React from "react";
-import style from "../../styles/Store/Content";
-import { useGetAllProductsQuery } from "../../features/productsApi";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/cartSlice";
-import axios from "axios";
+import { useGetAllProductsQuery } from "../../features/productsApi";
+import style from "../../styles/Store/Content";
 
 const Contents = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();

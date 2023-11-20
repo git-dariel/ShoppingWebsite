@@ -7,7 +7,6 @@ import Cart from "./pages/Cart";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LoadingComponent from "../src/styles/Loading/LoadingComponent";
-
 function App() {
   return (
     <div className="App">

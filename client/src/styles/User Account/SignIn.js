@@ -10,19 +10,30 @@ const WrapperBack = styled.div`
 const Background = styled.div`
   width: 380px;
   height: 500px;
-  background-color: white;
+  background-color: #010101;
   border-radius: 20px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2),
+    -10px -10px 20px rgba(255, 255, 255, 0.05),
+    -10px 10px 20px rgba(0, 0, 0, 0.2),
+    10px -10px 20px rgba(255, 255, 255, 0.05), 0px 10px 20px rgba(0, 0, 0, 0.2),
+    0px -10px 20px rgba(255, 255, 255, 0.05);
 
   p {
     margin-top: 20px;
     text-align: center;
+    color: white;
+  }
+  .apple-logo {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
-const Title = styled.h1`
-  margin-top: 95px;
-  text-align: center;
+const Logo = styled.img`
+  height: 50px;
+  width: 50px;
 `;
 
 const InputWrapper = styled.div`
@@ -35,13 +46,18 @@ const InputWrapper = styled.div`
 
 const Input = styled.input`
   margin-bottom: 10px;
-  padding: 5px 5px;
+  padding: 10px;
   width: 250px;
   font-size: 14px;
   font-weight: 500;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 5px;
   outline: none;
+  transition: border-color 0.3s;
+
+  &:focus {
+    border-color: #7d7dff; /* Change border color on focus */
+  }
 `;
 
 const ButtonWrap = styled.div`
@@ -52,10 +68,9 @@ const ButtonWrap = styled.div`
 `;
 
 const Button = styled.button`
-  height: 30px;
-  width: 100px;
-  width: 260px;
-  font-size: 14px;
+  height: 40px;
+  width: 270px;
+  font-size: 16px;
   background-color: #323264;
   color: white;
   font-size: 14px;
@@ -72,11 +87,19 @@ const Button = styled.button`
 const Home = styled.p`
   font-size: 14px;
   font-weight: 500;
+
+  .home {
+    color: gray;
+  }
 `;
 
 const Descipt = styled.p`
   font-size: 14px;
   font-weight: 500;
+
+  .signup {
+    color: gray;
+  }
 `;
 
 const Result = styled.p`
@@ -86,7 +109,7 @@ const Result = styled.p`
 const style = {
   WrapperBack,
   Background,
-  Title,
+  Logo,
   InputWrapper,
   Input,
   ButtonWrap,

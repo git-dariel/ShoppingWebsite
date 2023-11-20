@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import appleLogo from "../assets/img/apple-white.png";
 
 const Registration = () => {
   const [username, setUsername] = useState("");
@@ -13,7 +14,7 @@ const Registration = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!username || !email || !password) {
       toast.error("Please fill all the fields", {
         position: "top-center",
@@ -25,7 +26,7 @@ const Registration = () => {
           email: email,
           password: password,
         });
-  
+
         console.log(response);
         toast.success("User registered successfully", {
           position: "top-center",
@@ -40,24 +41,26 @@ const Registration = () => {
   return (
     <style.WrapperBack>
       <style.Background>
-        <style.Title>Sign up</style.Title>
-        <p>Lorem ipsum dolor sit amet.</p>
+        <div className="apple-logo">
+          <style.Logo src={appleLogo} alt="apple logo" />
+        </div>
+        <p>Create an Account</p>
         <style.InputWrapper>
           <style.Input
             type="text"
-            placeholder="Username"
+            placeholder="Enter your username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
           <style.Input
             type="text"
-            placeholder="Email"
+            placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <style.Input
             type="password"
-            placeholder="Password"
+            placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -71,13 +74,17 @@ const Registration = () => {
         <style.DesWrapper>
           <style.Descript>Already have an account?</style.Descript>
           <style.Login>
-            <Link to="/signin">Signin</Link>
+            <Link className="signin" to="/signin">
+              Signin
+            </Link>
           </style.Login>
         </style.DesWrapper>
 
         <style.Home>
           <style.Login>
-            <Link to="/">Go to home</Link>
+            <Link className="home" to="/">
+              Go to home
+            </Link>
           </style.Login>
         </style.Home>
       </style.Background>

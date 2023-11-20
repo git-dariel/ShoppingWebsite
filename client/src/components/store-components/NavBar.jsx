@@ -1,24 +1,13 @@
-import React, { useEffect, useState } from "react";
-import style from "../../styles/Store/NavBar";
-import { Link, useNavigate } from "react-router-dom";
-import { MdOutlineShoppingCart } from "react-icons/md";
+import React from "react";
 import { HiOutlineLogout } from "react-icons/hi";
-import axios from "axios";
+import { MdOutlineShoppingCart } from "react-icons/md";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import style from "../../styles/Store/NavBar";
+import appleLogo from "../../assets/img/apple-white.png";
 
 const NavBar = () => {
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await axios.get("http://localhost:3001/username");
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchData();
-  }, []);
 
   const handleLogout = () => {
     const confirm = window.confirm("Are you sure you want to logout?");
@@ -38,7 +27,7 @@ const NavBar = () => {
     <style.Container>
       <style.Wrapper>
         <style.Left>
-          <style.Logo>Welcome</style.Logo>
+          <style.Logo src={appleLogo} alt="apple logo" />
         </style.Left>
         <style.Right>
           <style.MenuItem>

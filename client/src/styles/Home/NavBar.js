@@ -21,10 +21,10 @@ const Center = styled.div`
   flex: 1;
 `;
 
-const Logo = styled.h1`
-  font-weight: 900;
-  text-align: center;
-  font-size: 18px;
+const Logo = styled.img`
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 `;
 
 const Right = styled.div`
@@ -45,16 +45,16 @@ const MenuItem = styled.div`
     cursor: pointer;
     font-weight: 900;
     text-decoration: none;
-    color: black;
+    color: white;
 
     &:hover {
-      color: violet;
+      color: gray;
       transition: 0.3s ease-in;
     }
   }
 
   &:hover {
-    color: violet;
+    color: gray;
     transition: 0.3s ease-in;
   }
 `;

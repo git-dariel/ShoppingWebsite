@@ -26,7 +26,7 @@ const LoadingComponent = () => {
           height="80"
           width="80"
           radius="9"
-          color="#0F0F0F"
+          color="white"
           ariaLabel="three-dots-loading"
           wrapperStyle={{
             position: "absolute",

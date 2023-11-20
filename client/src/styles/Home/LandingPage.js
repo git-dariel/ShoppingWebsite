@@ -1,61 +1,52 @@
 import { styled } from "styled-components";
 
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-`;
+const Wrapper = styled.section``;
 
 const Image = styled.img`
   height: auto;
-  width: auto;
-  margin-top: 35px;
-  margin-left: 200px;
+  width: 1200px;
+  margin-top: 80px;
 `;
 
 const ImgWrapper = styled.div`
   display: flex;
-  align-items: start;
-  justify-content: flex-start;
+  align-items: flex-end;
+  justify-content: flex-end;
 `;
 
 const Title = styled.div`
-  color: violet;
-  margin-left: 90px;
+  margin-top: 50px;
+  color: white;
+  text-align: center;
 `;
 
 const H1 = styled.h1`
-  font-weight: 300;
-  margin-bottom: 5px;
-  font-family: cursive;
+  font-weight: bold;
+  font-size: 60px;
 `;
 
 const Ptag = styled.p`
-  margin-top: 15px;
-  text-align: justify;
-  color: black;
-  margin-right: 190px;
+  margin-top: 10px;
+  color: white;
+  font-size: 25px;
 `;
 
 const Button = styled.button`
-  margin-top: 35px;
+  margin-top: 30px;
   height: 35px;
-  width: 200px;
-  background-color: violet;
+  width: 150px;
+  background-color: white;
   border: none;
   border-radius: 20px;
-  font-size: 14px;
-  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
   transform-origin: center;
 
   &:hover {
-    transform: scale(1.1);
-  }
-
-  &.ButtonAnimation {
-    animation: buttonAnimation 0.5s ease-in-out;
+    transform: scale(1.05);
   }
 `;
 

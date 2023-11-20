@@ -1,6 +1,6 @@
 import { default as React, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import style from "../../src/styles/Store/Store";
+import { useLocation, useNavigate } from "react-router-dom";
+import "../App.css";
 import Contents from "../components/store-components/Contents";
 import NavBar from "../components/store-components/NavBar";
 
@@ -15,10 +15,10 @@ const Store = () => {
   }, [location, navigate]);
 
   return (
-    <style.Wrapper>
+    <>
       <NavBar />
       <Contents />
-    </style.Wrapper>
+    </>
   );
 };
 

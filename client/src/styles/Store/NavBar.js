@@ -17,10 +17,10 @@ const Left = styled.div`
   align-items: center;
 `;
 
-const Logo = styled.h1`
-  font-weight: 900;
-  text-align: center;
-  font-size: 18px;
+const Logo = styled.img`
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
 `;
 
 const Right = styled.div`
@@ -38,15 +38,15 @@ const MenuItem = styled.div`
   .cart-icon {
     height: 25px;
     width: 25px;
-    margin-right: 20px;
+    margin-right: 30px;
   }
 
   .cart-link {
     cursor: pointer;
-    color: black;
+    color: white;
 
     &:hover {
-      color: violet;
+      color: gray;
       transition: 0.3s ease-in;
     }
   }
@@ -55,7 +55,7 @@ const MenuItem = styled.div`
     height: 25px;
     width: 25px;
     cursor: pointer;
-    color: black;
+    color: white;
 
     &:hover {
       color: red;

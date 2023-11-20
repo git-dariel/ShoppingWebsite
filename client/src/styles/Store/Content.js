@@ -5,8 +5,9 @@ const HomeContainer = styled.div`
 
   h2 {
     font-size: 40px;
-    font-weight: 400;
+    font-weight: bold;
     text-align: center;
+    color: white;
   }
 `;
 
@@ -27,13 +28,14 @@ const Product = styled.div`
   width: 250px;
   max-width: 100%;
   height: 400px;
-  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.3),
     2px 2px 5px rgba(94, 104, 121, 0.3);
 
   h3 {
     font-size: 25px;
     font-weight: 400;
     text-align: center;
+    color: white;
   }
 
   img {
@@ -47,6 +49,7 @@ const Product = styled.div`
     font-size: 20px;
     font-weight: 700;
     text-align: center;
+    color: white;
   }
 
   button {

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import style from "../styles/User Account/SignIn";
+import appleLogo from "../assets/img/apple-white.png";
 
 const Signin = () => {
   const [username, setUsername] = useState("");
@@ -28,19 +29,22 @@ const Signin = () => {
   return (
     <style.WrapperBack>
       <style.Background>
-        <style.Title>Sign in</style.Title>
-        <p>Lorem ipsum dolor sit amet.</p>
+        <div className="apple-logo">
+          <style.Logo src={appleLogo} alt="apple logo" />
+        </div>
+
+        <p>Sign in your Account</p>
         <style.InputWrapper>
           <style.Input
             type="text"
-            placeholder="Username"
+            placeholder="Enter your username"
             name="username"
             onChange={(e) => setUsername(e.target.value)}
           />
           <style.Input
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="Enter your password"
             onChange={(e) => setPassword(e.target.value)}
           />
         </style.InputWrapper>
@@ -50,11 +54,16 @@ const Signin = () => {
         <style.Result>{loginStatus}</style.Result>
 
         <style.Descipt>
-          Don't have an account? <Link to={"/signup"}>Signup</Link>
+          Don't have an account?{" "}
+          <Link className="signup" to={"/signup"}>
+            Signup
+          </Link>
         </style.Descipt>
 
         <style.Home>
-          <Link to="/">Go to home</Link>
+          <Link className="home" to="/">
+            Go to home
+          </Link>
         </style.Home>
       </style.Background>
     </style.WrapperBack>
