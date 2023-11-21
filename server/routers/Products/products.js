@@ -16,7 +16,7 @@ const products = [
   {
     id: "3",
     name: "iPad Pro",
-    price: "1,099",
+    price: "1099",
     image:
       "https://res.cloudinary.com/dpud9tn8q/image/upload/v1696941022/Online-Shop/hhs7dauyonjpuwxjxibb.png",
   },

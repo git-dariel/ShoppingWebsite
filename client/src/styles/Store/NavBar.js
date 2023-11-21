@@ -9,6 +9,12 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 665px) {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+  }
 `;
 
 const Left = styled.div`
@@ -21,6 +27,10 @@ const Logo = styled.img`
   width: 25px;
   height: 25px;
   cursor: pointer;
+
+  @media (max-width: 665px) {
+    margin-bottom: -2rem;
+  }
 `;
 
 const Right = styled.div`
@@ -28,6 +38,10 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @media (max-width: 665px) {
+    padding: 0px 5px;
+  }
 `;
 
 const MenuItem = styled.div`

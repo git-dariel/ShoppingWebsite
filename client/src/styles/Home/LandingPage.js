@@ -6,6 +6,12 @@ const Image = styled.img`
   height: auto;
   width: 1200px;
   margin-top: 80px;
+
+  @media (max-width: 665px) {
+    height: auto;
+    width: 400px;
+    margin-top: 8rem;
+  }
 `;
 
 const ImgWrapper = styled.div`
@@ -23,6 +29,10 @@ const Title = styled.div`
 const H1 = styled.h1`
   font-weight: bold;
   font-size: 60px;
+
+  @media (max-width: 665px) {
+    margin-top: 8rem;
+  }
 `;
 
 const Ptag = styled.p`
