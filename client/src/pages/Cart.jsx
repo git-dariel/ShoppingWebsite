@@ -10,6 +10,7 @@ import {
 
 import { Link } from "react-router-dom";
 import "../styles/Cart/Cart.css";
+import axios from "axios";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -19,17 +20,58 @@ const Cart = () => {
     dispatch(getTotals());
   }, [cart, dispatch]);
 
-  const handleAddToCart = (product) => {
-    dispatch(addToCart(product));
+  const handleAddToCart = async (product) => {
+    try {
+      dispatch(addToCart(product));
+
+      const response = await axios.post(
+        "http://localhost:3001/cartProduct/increment",
+        {
+          ...product,
+          quantity: 1,
+        }
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
-  const handleDecreaseCart = (product) => {
-    dispatch(decreaseCart(product));
+  const handleDecreaseCart = async (product) => {
+    try {
+      dispatch(decreaseCart(product));
+      const response = await axios.post(
+        "http://localhost:3001/cartProduct/decrement",
+        {
+          ...product,
+          quantity: 1,
+        }
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
-  const handleRemoveFromCart = (product) => {
-    dispatch(removeFromCart(product));
+  const handleRemoveFromCart = async (product) => {
+    try {
+      dispatch(removeFromCart(product));
+
+      const response = await axios.delete(
+        `http://localhost:3001/cartProduct/${product.id}`
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
-  const handleClearCart = () => {
-    dispatch(clearCart());
+  const handleClearCart = async () => {
+    try {
+      dispatch(clearCart());
+
+      const response = await axios.delete("http://localhost:3001/cart");
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="cart-container">

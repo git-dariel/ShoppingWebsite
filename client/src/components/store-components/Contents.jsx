@@ -12,10 +12,13 @@ const Contents = () => {
   const handleAddToCart = async (product) => {
     try {
       dispatch(addToCart(product));
-
+  
       const response = await axios.post(
         "http://localhost:3001/cartProduct",
-        product
+        {
+          ...product,
+          quantity: 1 // or the quantity you want to add
+        }
       );
       console.log(response.data);
     } catch (error) {

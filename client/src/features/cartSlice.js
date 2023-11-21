@@ -23,13 +23,13 @@ const cartSlice = createSlice({
           ...state.cartItems[existingIndex],
           cartQuantity: state.cartItems[existingIndex].cartQuantity + 1,
         };
-        toast.info("Increased product quantity", {
+        toast.info(`Increased cart quantity`, {
           position: "bottom-left",
         });
       } else {
         let tempProductItem = { ...action.payload, cartQuantity: 1 };
         state.cartItems.push(tempProductItem);
-        toast.success("Product added to cart", {
+        toast.success(`${action.payload.name} added to cart`, {
           position: "bottom-left",
         });
       }
@@ -53,7 +53,7 @@ const cartSlice = createSlice({
 
         state.cartItems = nextCartItems;
 
-        toast.error("Product removed from cart", {
+        toast.error(`${action.payload.name}  removed from cart`, {
           position: "bottom-left",
         });
       }
@@ -69,7 +69,7 @@ const cartSlice = createSlice({
 
           state.cartItems = nextCartItems;
 
-          toast.error("Product removed from cart", {
+          toast.error(`${action.payload.name}  removed from cart`, {
             position: "bottom-left",
           });
         }
