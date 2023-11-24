@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const cors = require("cors");
 const registration = require("./routers/User Accounts/Signup.jsx");
 const signin = require("./routers/User Accounts/Signin.jsx");

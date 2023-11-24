@@ -12,14 +12,11 @@ const Contents = () => {
   const handleAddToCart = async (product) => {
     try {
       dispatch(addToCart(product));
-  
-      const response = await axios.post(
-        "http://localhost:3001/cartProduct",
-        {
-          ...product,
-          quantity: 1 // or the quantity you want to add
-        }
-      );
+
+      const response = await axios.post("http://localhost:3001/cartProduct", {
+        ...product,
+        quantity: 1, // or the quantity you want to add
+      });
       console.log(response.data);
     } catch (error) {
       console.error(error);
@@ -35,20 +32,18 @@ const Contents = () => {
       ) : (
         <>
           <h2>New Arrivals</h2>
-          <style.Products>
-            {data?.map((product) => (
-              <style.Product>
-                <h3>{product.name}</h3>
-                <img src={product.image} alt={product.name} />
+          {data?.map((product) => (
+            <style.Product key={product.id}>
+              <h3>{product.name}</h3>
+              <img src={product.image} alt={product.name} />
 
-                <p className="price">${product.price}</p>
+              <p className="price">${product.price}</p>
 
-                <button onClick={() => handleAddToCart(product)}>
-                  Add to Cart
-                </button>
-              </style.Product>
-            ))}
-          </style.Products>
+              <button onClick={() => handleAddToCart(product)}>
+                Add to Cart
+              </button>
+            </style.Product>
+          ))}
         </>
       )}
     </style.HomeContainer>
