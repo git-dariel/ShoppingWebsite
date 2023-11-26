@@ -33,7 +33,7 @@ const Logo = styled.img`
   cursor: pointer;
 
   @media (max-width: 665px) {
-    margin-bottom: -1rem;
+    margin-bottom: -1.1rem;
   }
 `;
 

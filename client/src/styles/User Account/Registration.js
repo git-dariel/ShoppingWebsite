@@ -68,13 +68,11 @@ const ButtonWrap = styled.div`
 `;
 
 const Button = styled.button`
-  height: 30px;
-  width: 100px;
-  width: 260px;
-  font-size: 14px;
+  height: 40px;
+  width: 270px;
+  font-size: 16px;
   background-color: #323264;
   color: white;
-  font-size: 14px;
   border-radius: 5px;
   border: none;
   cursor: pointer;

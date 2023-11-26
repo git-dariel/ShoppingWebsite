@@ -32,18 +32,20 @@ const Contents = () => {
       ) : (
         <>
           <h2>New Arrivals</h2>
-          {data?.map((product) => (
-            <style.Product key={product.id}>
-              <h3>{product.name}</h3>
-              <img src={product.image} alt={product.name} />
+          <style.Products>
+            {data?.map((product) => (
+              <style.Product>
+                <h3>{product.name}</h3>
+                <img src={product.image} alt={product.name} />
 
-              <p className="price">${product.price}</p>
+                <p className="price">${product.price}</p>
 
-              <button onClick={() => handleAddToCart(product)}>
-                Add to Cart
-              </button>
-            </style.Product>
-          ))}
+                <button onClick={() => handleAddToCart(product)}>
+                  Add to Cart
+                </button>
+              </style.Product>
+            ))}
+          </style.Products>
         </>
       )}
     </style.HomeContainer>

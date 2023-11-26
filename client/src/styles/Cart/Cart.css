@@ -7,8 +7,12 @@ body {
 .cart-container h2 {
   margin-top: 1rem;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 3rem;
   text-align: center;
+
+  @media (max-width: 665px) {
+    font-size: 2rem;
+  }
 }
 .cart-container .titles {
   margin: 2rem 0 1rem 0;
@@ -16,7 +20,7 @@ body {
 }
 .cart-container .titles h3 {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: bold;
   text-transform: uppercase;
 }
 .cart-item,

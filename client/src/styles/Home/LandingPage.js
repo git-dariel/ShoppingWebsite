@@ -9,8 +9,8 @@ const Image = styled.img`
 
   @media (max-width: 665px) {
     height: auto;
-    width: 400px;
-    margin-top: 8rem;
+    width: 340px;
+    margin-top: 5rem;
   }
 `;
 
@@ -31,7 +31,8 @@ const H1 = styled.h1`
   font-size: 60px;
 
   @media (max-width: 665px) {
-    margin-top: 8rem;
+    margin-top: 7rem;
+    font-size: 3rem;
   }
 `;
 
@@ -39,6 +40,10 @@ const Ptag = styled.p`
   margin-top: 10px;
   color: white;
   font-size: 25px;
+
+  @media (max-width: 665px) {
+    font-size: 1rem;
+  }
 `;
 
 const Button = styled.button`
@@ -57,6 +62,13 @@ const Button = styled.button`
 
   &:hover {
     transform: scale(1.05);
+  }
+
+  @media (max-width: 665px) {
+    height: 30px;
+    width: 100px;
+    font-size: 0.8rem;
+    margin-top: 1.3rem;
   }
 `;
 

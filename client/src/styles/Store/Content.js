@@ -8,6 +8,10 @@ const HomeContainer = styled.div`
     font-weight: bold;
     text-align: center;
     color: white;
+
+    @media (max-width: 665px) {
+      font-size: 2rem;
+    }
   }
 `;
 
@@ -59,14 +63,14 @@ const Product = styled.div`
     margin-top: 2rem;
     font-weight: 400;
     letter-spacing: 1.15px;
-    background-color: #001524;
-    color: #f9f9f9;
+    background-color: #B0A695;
+    color: black;
     border: none;
     outline: none;
     cursor: pointer;
 
     &:hover {
-      background-color: #b4b4b3;
+      background-color: #776B5D;
       color: black;
       transition: 0.3s ease-in;
     }

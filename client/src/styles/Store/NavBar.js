@@ -29,7 +29,9 @@ const Logo = styled.img`
   cursor: pointer;
 
   @media (max-width: 665px) {
-    margin-bottom: -2rem;
+    width: 20px;
+    height: 20px;
+    margin-bottom: -1.33rem;
   }
 `;
 
@@ -53,6 +55,11 @@ const MenuItem = styled.div`
     height: 25px;
     width: 25px;
     margin-right: 30px;
+
+    @media (max-width: 665px) {
+      height: 20px;
+      width: 20px;
+    }
   }
 
   .cart-link {
@@ -74,6 +81,11 @@ const MenuItem = styled.div`
     &:hover {
       color: red;
       transition: 0.3s ease-in;
+    }
+
+    @media (max-width: 665px) {
+      height: 20px;
+      width: 20px;
     }
   }
 `;
