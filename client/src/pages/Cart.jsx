@@ -11,6 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import "../styles/Cart/Cart.css";
 import axios from "axios";
+import ScrollBarStyle from "../styles/ScrollBar/ScrollBarStyles";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -174,6 +175,7 @@ const Cart = () => {
           </div>
         </div>
       )}
+      <ScrollBarStyle />
     </div>
   );
 };

@@ -71,7 +71,7 @@ const Product = styled.div`
 
     &:hover {
       background-color: #776B5D;
-      color: black;
+      color: white;
       transition: 0.3s ease-in;
     }
   }
