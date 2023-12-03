@@ -7,7 +7,10 @@ import { toast } from "react-toastify";
 import appleLogo from "../assets/img/apple-white.png";
 
 const Registration = () => {
-  const [username, setUsername] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [address, setAddress] = useState("");
+  const [contact, setContact] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -15,16 +18,26 @@ const Registration = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!username || !email || !password) {
+    if (
+      !firstname ||
+      !lastname ||
+      !address ||
+      !contact ||
+      !email ||
+      !password
+    ) {
       toast.error("Please fill all the fields", {
         position: "top-center",
       });
     } else {
       try {
         const response = await axios.post("http://localhost:3001/register", {
-          username: username,
+          firstname: firstname,
+          lastname: lastname,
+          address: address,
           email: email,
           password: password,
+          contact: contact,
         });
 
         console.log(response);
@@ -48,9 +61,27 @@ const Registration = () => {
         <style.InputWrapper>
           <style.Input
             type="text"
-            placeholder="Enter your username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Enter your firstname"
+            value={firstname}
+            onChange={(e) => setFirstname(e.target.value)}
+          />
+          <style.Input
+            type="text"
+            placeholder="Enter your lastname"
+            value={lastname}
+            onChange={(e) => setLastname(e.target.value)}
+          />
+          <style.Input
+            type="text"
+            placeholder="Enter your address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
+          <style.Input
+            type="text"
+            placeholder="Enter your contact number"
+            value={contact}
+            onChange={(e) => setContact(e.target.value)}
           />
           <style.Input
             type="text"

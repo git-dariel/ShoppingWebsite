@@ -3,10 +3,10 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
 const registration = (req, res) => {
-  const { username, email, password } = req.body;
+  const { firstname, lastname, address, email, password, contact } = req.body;
 
-  if (!username || !email || !password) {
-    return res.status(400).send("Username, email, and password are required");
+  if ( !email || !password || !firstname || !lastname || !address || !contact) {
+    return res.status(400).send("firstname, lastname, address, contact, email, and password are required");
   }
 
   bcrypt.hash(password, saltRounds, (err, hash) => {
@@ -16,8 +16,8 @@ const registration = (req, res) => {
     }
 
     db.query(
-      "INSERT INTO users (username, email, password) VALUES (?, ?, ?)",
-      [username, email, hash],
+      "INSERT INTO users (firstname, lastname, address, email, password, contact) VALUES (?, ?, ?, ?, ?, ?)",
+      [firstname, lastname, address, email, hash, contact],
       (err, result) => {
         if (err) {
           console.log(err);

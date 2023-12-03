@@ -5,7 +5,7 @@ import style from "../styles/User Account/SignIn";
 import appleLogo from "../assets/img/apple-white.png";
 
 const Signin = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginStatus, setLoginStatus] = useState("");
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const Signin = () => {
   const handleSignIn = () => {
     axios
       .post("http://localhost:3001/signin", {
-        username: username,
+        email: email,
         password: password,
       })
       .then((response) => {
@@ -36,10 +36,10 @@ const Signin = () => {
         <p>Sign in your Account</p>
         <style.InputWrapper>
           <style.Input
-            type="text"
-            placeholder="Enter your username"
-            name="username"
-            onChange={(e) => setUsername(e.target.value)}
+            type="email"
+            placeholder="Enter your email"
+            name="email"
+            onChange={(e) => setEmail(e.target.value)}
           />
           <style.Input
             type="password"

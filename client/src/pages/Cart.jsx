@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToCart,
@@ -12,9 +12,11 @@ import { Link } from "react-router-dom";
 import "../styles/Cart/Cart.css";
 import axios from "axios";
 import ScrollBarStyle from "../styles/ScrollBar/ScrollBarStyles";
+import Modal from "../components/Modal";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const [openModal, setOpenModal] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -152,7 +154,8 @@ const Cart = () => {
                 <span className="amount">${cart.cartTotalAmount}</span>
               </div>
               <p>Taxes and shipping calculated at checkout</p>
-              <button>Check out</button>
+              <button onClick={() => setOpenModal(true)}>Check out</button>
+              <Modal open={openModal} onClose={() => setOpenModal(false)} />
               <div className="continue-shopping">
                 <Link to="/store">
                   <svg
