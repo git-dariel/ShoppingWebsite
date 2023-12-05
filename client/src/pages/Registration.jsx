@@ -10,7 +10,7 @@ const Registration = () => {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [address, setAddress] = useState("");
-  const [contact, setContact] = useState("");
+  const [contact, setContact] = useState(0);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -27,6 +27,10 @@ const Registration = () => {
       !password
     ) {
       toast.error("Please fill all the fields", {
+        position: "top-center",
+      });
+    } else if (contact.length > 11) {
+      toast.error("Your contact number exceeds the 11-number limit.", {
         position: "top-center",
       });
     } else {
@@ -73,18 +77,6 @@ const Registration = () => {
           />
           <style.Input
             type="text"
-            placeholder="Enter your address"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-          />
-          <style.Input
-            type="text"
-            placeholder="Enter your contact number"
-            value={contact}
-            onChange={(e) => setContact(e.target.value)}
-          />
-          <style.Input
-            type="text"
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -94,6 +86,18 @@ const Registration = () => {
             placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+          />
+          <style.Input
+            type="number"
+            placeholder="Enter your contact number"
+            value={contact}
+            onChange={(e) => setContact(e.target.value)}
+          />
+          <style.TextArea
+            type="text"
+            placeholder="Enter your address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
           />
         </style.InputWrapper>
         <style.ButtonWrap>

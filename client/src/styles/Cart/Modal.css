@@ -59,6 +59,7 @@
 }
 
 /* Additional Styling for Modal Contents */
+.shipping-fee,
 .title-address,
 .title-ordered,
 .orderTotal p,
@@ -76,6 +77,7 @@
   margin-left: 10px;
 }
 
+.shipping-fee,
 .child-address,
 .child-ordered,
 .orderTotal,
@@ -86,7 +88,7 @@
 
 .child-address {
   background-color: #1f1f1f;
-  width: 99%;
+  width: auto;
   height: 50px;
   padding: 10px;
   border-radius: 10px;
@@ -96,8 +98,22 @@
   justify-content: center;
 }
 
-.child-address p {
-  margin-right: 15px;
+.userName,
+.contact,
+.person-address {
+  font-size: 16px;
+  color: #f8f9fa;
+}
+
+.change {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.child-address h1 {
+  margin-right: 2rem;
+  font-weight: 500;
 }
 
 .place-order {
@@ -123,13 +139,37 @@ table td {
   padding: 10px 0;
 }
 
+.shipping-container {
+  background-color: #1f1f1f;
+  padding: 19px;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  width: 50px;
+  text-align: center;
+}
+
+.fee {
+  margin-bottom: 20px;
+  margin-right: 10px;
+  font-size: 16px;
+  color: white;
+}
+.shipping-fee {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
 .total-container,
 .mer,
 .ship,
 .total {
-  background-color: #f8f9fa;
+  background-color: #1f1f1f;
   padding: 10px;
   border-radius: 5px;
+  color: white;
+  font-size: 14px;
 }
 
 select {
@@ -164,6 +204,17 @@ a {
   cursor: pointer;
 }
 
-.close-button:hover{
+.close-button:hover {
   color: red;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 999;
 }

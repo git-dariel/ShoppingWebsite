@@ -7,6 +7,8 @@ import Cart from "./pages/Cart";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LoadingComponent from "../src/styles/Loading/LoadingComponent";
+import SuccessPage from "./pages/SuccessPage";
+import UpdateInfoPage from "./pages/UpdateInfoPage";
 function App() {
   return (
     <div className="App">
@@ -19,6 +21,8 @@ function App() {
           <Route path="/store" element={<Store />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/loading" element={<LoadingComponent />} />
+          <Route path="/success" element={<SuccessPage />} />
+          <Route path="/updateInfo/:id" element={<UpdateInfoPage />} />
         </Routes>
       </BrowserRouter>
     </div>

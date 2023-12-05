@@ -8,8 +8,8 @@ const WrapperBack = styled.section`
 `;
 
 const Background = styled.div`
-  width: 380px;
-  height: 500px;
+  width: 390px;
+  height: auto;
   background-color: #010101;
   border-radius: 20px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2),
@@ -24,7 +24,7 @@ const Background = styled.div`
     color: white;
   }
   .apple-logo {
-    margin-top: 80px;
+    margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,6 +58,18 @@ const Input = styled.input`
   &:focus {
     border-color: #7d7dff; /* Change border color on focus */
   }
+`;
+
+const TextArea = styled.textarea`
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 250px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
 `;
 
 const ButtonWrap = styled.div`
@@ -124,6 +136,7 @@ const style = {
   Descript,
   Login,
   Home,
+  TextArea,
 };
 
 export default style;

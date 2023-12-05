@@ -1,0 +1,59 @@
+.success-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1f1f1f;
+}
+
+.success-message {
+  font-size: 2em;
+  color: #4caf50;
+  text-align: center;
+  animation: popIn 2s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.goBack {
+  position: relative;
+  overflow: hidden;
+  background-color: #4caf50; /* Same as success-message text color */
+  color: #1f1f1f; /* Same as success-page background color */
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  align-self: center;
+  animation: popIn 2s ease-in-out;
+}
+.goBack:hover {
+  background-color: #45a049; /* Darker green when hovered */
+  transform: scale(1.1); /* Slightly increase size when hovered */
+}
+
+.goBack:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

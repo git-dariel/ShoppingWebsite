@@ -4,6 +4,7 @@ import "../App.css";
 import Contents from "../components/store-components/Contents";
 import NavBar from "../components/store-components/NavBar";
 import ScrollBarStyle from "../styles/ScrollBar/ScrollBarStyles";
+import Footer from "../components/Footer";
 
 const Store = () => {
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ const Store = () => {
     <>
       <NavBar />
       <Contents />
+      <Footer />
       <ScrollBarStyle />
     </>
   );
